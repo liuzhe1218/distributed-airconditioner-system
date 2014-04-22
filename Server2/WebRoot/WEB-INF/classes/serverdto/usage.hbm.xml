@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 记录所有房间的开关次数(开=关),次数可插入可更新, 房间是能被插入 -->
+   <class name="serverdto.usagetimes" table="usagetimes">
+        <id name="id" column="ID" type="int">
+              <generator class="increment" />
+        </id>
+        <property name="roomID" column="RoomID" type="string" not-null="true"/>
+        <property name="times" column="Times" type="int" not-null="true" update="true"/>
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 服务器端记录的所有客房的请求表,不会被更新,只会被插入 -->
+   <class name="serverdto.record" table="record">
+        <id name="ID" column="ID" type="int">
+             <generator class="increment" />
+        </id>
+        <property name="roomID" column="RoomID" type="string" not-null="true" />
+        <property name="threadID" column="ThreadID" type="int" not-null="true" />
+        <property name="temperdirection" column="TemperDirection" type="string" not-null="true"/>
+        <property name="starttemper" column="StartTemper" type="double" not-null="true" />
+        <property name="endtemper" column="EndTemper" type="double" not-null="true" />
+        <property name="starttime" column="StartTime" type="timestamp" />
+        <property name="endtime" column="EndTime" type="timestamp" />
+        <property name="flowvolume" column="FlowVolume" type="double" not-null="true" />
+        <property name="flowpower" column="FlowPower" type="string" not-null="true" />
+   </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!-- 三个线程的当前状态表,不会被插入,只能被更新 -->
+   <class name="serverdto.serverstatus" table="serverstatus">
+        <id name="threadID" column="ThreadID" type="int">
+            <generator class="increment" />
+        </id>
+        <property name="currentstatus" column="CurrentStatus" type="string" not-null="true" update="true"/>
+        <property name="usestatus" column="UseStatus" type="string" update="true"/>
+        <property name="temperdirection" column="TemperDirection" type="string" update="true"/>
+        <property name="roomID" column="RoomID" type="string" update="true"/>
+   </class>
+</hibernate-mapping>

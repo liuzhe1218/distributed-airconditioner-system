@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+   <package extends="json-default" name="json">
+        <action name="control" method="control" class="serveraction.controlaction">
+            <result type="json" />
+        </action>
+        <action name="list" method="gettable" class="serveraction.controlaction">
+            <result type="json" />     
+        </action>
+        <action name="getfile" method="getfile" class="serveraction.controlaction">
+             <result type="json" />
+        </action>
+        <action name="server" method="getServer" class="serveraction.controlaction">
+             <result type="json" />
+        </action>
+   </package>
+</struts>    
